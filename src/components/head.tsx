@@ -17,7 +17,7 @@ export const Head = (props: Props) => (
       name="description"
       content={props.description ?? defaultProps.description}
     />
-    <link rel="canonical" href="https://deepso.com" />
+    <link rel="canonical" href="https://deepso.sh" />
 
     <meta property="og:title" content={props.title ?? defaultProps.title} />
     <meta
