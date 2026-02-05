@@ -1,8 +1,7 @@
+import { allWritings } from "content-collections";
 import { Link } from "waku";
 
 import { Head } from "@/components/head";
-
-import { allWritings } from "../../.content-collections/generated";
 
 export default function HomePage() {
   return (
