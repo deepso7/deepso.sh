@@ -1,20 +1,22 @@
-import { createHighlighter, Highlighter, BundledLanguage } from "shiki";
+import type { Highlighter, BundledLanguage } from "shiki";
+
+import { createHighlighter } from "shiki";
 
 import { CopyButton } from "./code-copy-button";
 
-type CodeProps = {
+interface CodeProps {
   code: string;
   className?: string;
   lang?: string;
-};
+}
 
-let highlighter: Highlighter | undefined = undefined;
+let highlighter: Highlighter | undefined;
 
 const getHighlighter = async () => {
   if (!highlighter) {
     highlighter = await createHighlighter({
-      themes: ["vitesse-dark", "vitesse-light"],
       langs: [],
+      themes: ["vitesse-dark", "vitesse-light"],
     });
   }
 
@@ -24,7 +26,9 @@ const getHighlighter = async () => {
 export const Code = async ({ code, className, ...rest }: CodeProps) => {
   const lang = className?.split("language-")[1];
 
-  if (!lang) throw new Error("No language detected");
+  if (!lang) {
+    throw new Error("No language detected");
+  }
 
   const highlighter = await getHighlighter();
 
@@ -41,6 +45,7 @@ export const Code = async ({ code, className, ...rest }: CodeProps) => {
       {...rest}
     >
       <CopyButton code={code} />
+      {/* oxlint-disable-next-line react/no-danger */}
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </div>
   );

@@ -1,7 +1,8 @@
+import type { PageProps } from "waku/router";
+
 import { MDXContent } from "@content-collections/mdx/react";
 import { allWritings } from "content-collections";
 import { Link } from "waku";
-import { PageProps } from "waku/router";
 
 import { Head } from "@/components/head";
 import { components } from "@/components/mdx";
@@ -15,12 +16,12 @@ import {
 } from "@/components/ui/breadcrumb";
 import { HomeIcon } from "@/components/ui/home";
 
-export default async function WritingPage({
-  slug,
-}: PageProps<"/writing/[slug]">) {
+export default function WritingPage({ slug }: PageProps<"/writing/[slug]">) {
   const writing = allWritings.find((data) => data.slug === slug);
 
-  if (!writing) return <div>Not Found</div>;
+  if (!writing) {
+    return <div>Not Found</div>;
+  }
 
   return (
     <>
@@ -55,9 +56,9 @@ export default async function WritingPage({
           {writing.date && (
             <time className="text-sm text-muted-foreground">
               {new Date(writing.date).toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "long",
                 day: "numeric",
+                month: "long",
+                year: "numeric",
               })}
             </time>
           )}
@@ -70,7 +71,7 @@ export default async function WritingPage({
   );
 }
 
-export const getConfig = async () => {
+export const getConfig = () => {
   const paths = allWritings.map((data) => data.slug);
 
   return {

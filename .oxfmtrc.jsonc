@@ -27,4 +27,5 @@
     "preserveDuplicates": false,
     "preserveWhitespace": false,
   },
+  "ignorePatterns": ["**/ui/**"],
 }

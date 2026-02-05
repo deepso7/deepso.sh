@@ -1,16 +1,18 @@
+// oxlint-disable-next-line import/no-relative-parent-imports
 import "../styles.css";
 import type { ReactNode } from "react";
 
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
+import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 
-import { Footer } from "../components/footer";
+interface RootLayoutProps {
+  children: ReactNode;
+}
 
-type RootLayoutProps = { children: ReactNode };
-
-export default async function RootLayout({ children }: RootLayoutProps) {
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <body className="m-auto max-w-2xl">
       <Analytics />
@@ -30,8 +32,6 @@ export default async function RootLayout({ children }: RootLayoutProps) {
   );
 }
 
-export const getConfig = async () => {
-  return {
-    render: "static",
-  } as const;
-};
+export const getConfig = () => ({
+  render: "static",
+});

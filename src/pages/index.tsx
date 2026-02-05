@@ -1,9 +1,10 @@
 import { Link } from "waku";
 
-import { allWritings } from "../../.content-collections/generated";
-import { Head } from "../components/head";
+import { Head } from "@/components/head";
 
-export default async function HomePage() {
+import { allWritings } from "../../.content-collections/generated";
+
+export default function HomePage() {
   return (
     <div className="flex flex-col space-y-12 pt-16">
       <h1 className="text-2xl font-bold">Deepso.</h1>
@@ -35,8 +36,6 @@ export default async function HomePage() {
   );
 }
 
-export const getConfig = async () => {
-  return {
-    render: "static",
-  } as const;
-};
+export const getConfig = () => ({
+  render: "static",
+});

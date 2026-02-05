@@ -1,12 +1,21 @@
 import contentCollections from "@content-collections/vite";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
+// oxlint-disable-next-line import/no-nodejs-modules
 import path from "node:path";
+// oxlint-disable-next-line import/no-nodejs-modules
 import { fileURLToPath } from "node:url";
 import { defineConfig } from "waku/config";
 
 export default defineConfig({
   vite: {
+    environments: {
+      rsc: {
+        resolve: {
+          external: ["shiki"],
+        },
+      },
+    },
     plugins: [
       tailwindcss(),
       react({
@@ -16,13 +25,6 @@ export default defineConfig({
       }),
       contentCollections(),
     ],
-    environments: {
-      rsc: {
-        resolve: {
-          external: ["shiki"],
-        },
-      },
-    },
     resolve: {
       alias: {
         "@": path.resolve(

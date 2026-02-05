@@ -5,9 +5,9 @@ interface Props {
 }
 
 const defaultProps: Props = {
-  title: "Deepso",
   description: "Developer and Tinkerer",
   ogImage: "https://deepso.sh/images/cover.jpg",
+  title: "Deepso",
 };
 
 export const Head = (props: Props) => (

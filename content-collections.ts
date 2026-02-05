@@ -5,15 +5,15 @@ import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 import { z } from "zod";
 
 const writing = defineCollection({
-  name: "writing",
   directory: "src/writing",
   include: "**/*.mdx",
+  name: "writing",
   schema: z.object({
+    content: z.string(),
+    date: z.string(),
+    description: z.string(),
     slug: z.string(),
     title: z.string(),
-    description: z.string(),
-    date: z.string(),
-    content: z.string(),
   }),
   transform: async (document, context) => {
     const mdx = await compileMDX(context, document, {

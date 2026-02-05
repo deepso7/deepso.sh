@@ -1,4 +1,11 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "extends": ["ultracite/oxlint/core", "ultracite/oxlint/react"]
+  "extends": [
+    "./node_modules/ultracite/config/oxlint/core/.oxlintrc.json",
+    "./node_modules/ultracite/config/oxlint/react/.oxlintrc.json"
+  ],
+  "ignorePatterns": ["**/ui/**"],
+  "rules": {
+    "import/no-relative-parent-imports": "off"
+  }
 }
