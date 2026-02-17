@@ -29,5 +29,5 @@ const writing = defineCollection({
 });
 
 export default defineConfig({
-  collections: [writing],
+  content: [writing],
 });
