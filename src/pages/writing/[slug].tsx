@@ -1,8 +1,7 @@
-import type { PageProps } from "waku/router";
-
 import { MDXContent } from "@content-collections/mdx/react";
 import { allWritings } from "content-collections";
 import { Link } from "waku";
+import type { PageProps } from "waku/router";
 
 import { Head } from "@/components/head";
 import { components } from "@/components/mdx";

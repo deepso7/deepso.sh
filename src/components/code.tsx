@@ -1,5 +1,4 @@
 import type { Highlighter, BundledLanguage } from "shiki";
-
 import { createHighlighter } from "shiki";
 
 import { CopyButton } from "./code-copy-button";
@@ -30,11 +29,11 @@ export const Code = async ({ code, className, ...rest }: CodeProps) => {
     throw new Error("No language detected");
   }
 
-  const highlighter = await getHighlighter();
+  const h = await getHighlighter();
 
-  await highlighter.loadLanguage(lang as BundledLanguage);
+  await h.loadLanguage(lang as BundledLanguage);
 
-  const html = highlighter.codeToHtml(code, {
+  const html = h.codeToHtml(code, {
     lang,
     theme: "vitesse-dark",
   });
