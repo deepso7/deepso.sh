@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/resume",
+      "destination": "https://rxresu.me/deeepso/main",
+      "permanent": false
+    }
+  ]
+}
