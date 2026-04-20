@@ -12,10 +12,7 @@ export const ModeToggle = () => {
 
   const isDark = theme === "system" ? systemTheme === "dark" : theme === "dark";
 
-  const updateTheme = useCallback(
-    () => setTheme(isDark ? "light" : "dark"),
-    [isDark, setTheme]
-  );
+  const updateTheme = useCallback(() => setTheme(isDark ? "light" : "dark"), [isDark, setTheme]);
 
   return (
     <Button variant="secondary" size="icon-lg" onClick={updateTheme}>

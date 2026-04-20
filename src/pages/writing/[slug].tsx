@@ -44,13 +44,9 @@ export default function WritingPage({ slug }: PageProps<"/writing/[slug]">) {
       </Breadcrumb>
       <article className="w-full max-w-none">
         <header className="mb-8">
-          <h1 className="mb-2 text-4xl font-bold text-foreground">
-            {writing.title}
-          </h1>
+          <h1 className="mb-2 text-4xl font-bold text-foreground">{writing.title}</h1>
           {writing.description && (
-            <p className="text-lg text-muted-foreground">
-              {writing.description}
-            </p>
+            <p className="text-lg text-muted-foreground">{writing.description}</p>
           )}
           {writing.date && (
             <time className="text-sm text-muted-foreground">

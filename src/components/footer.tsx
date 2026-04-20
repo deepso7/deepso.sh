@@ -12,11 +12,7 @@ export const Footer = () => (
           size="icon-lg"
           variant="secondary"
           render={
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://github.com/deepso7"
-            >
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/deepso7">
               <GithubIcon className="flex cursor-pointer items-center justify-center rounded-md p-2 transition-colors duration-200 select-none hover:bg-accent" />
             </a>
           }
@@ -27,11 +23,7 @@ export const Footer = () => (
           size="icon-lg"
           variant="secondary"
           render={
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://twitter.com/deepso7"
-            >
+            <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/deepso7">
               <TwitterIcon className="flex cursor-pointer items-center justify-center rounded-md p-2 transition-colors duration-200 select-none hover:bg-accent" />
             </a>
           }
@@ -42,11 +34,7 @@ export const Footer = () => (
           size="icon-lg"
           variant="secondary"
           render={
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.linkedin.com/in/deepso7"
-            >
+            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/deepso7">
               <LinkedinIcon className="flex cursor-pointer items-center justify-center rounded-md p-2 transition-colors duration-200 select-none hover:bg-accent" />
             </a>
           }

@@ -22,13 +22,7 @@ export const components = {
     }
 
     return (
-      <a
-        href={href}
-        className={classNames}
-        target="_blank"
-        rel="noreferrer"
-        {...rest}
-      >
+      <a href={href} className={classNames} target="_blank" rel="noreferrer" {...rest}>
         {children}
       </a>
     );
@@ -52,9 +46,7 @@ export const components = {
           </svg>
           <div className="font-semibold text-foreground">Note</div>
         </div>
-        <div className="text-muted-foreground *:my-2 [&>*:last-child]:mb-0">
-          {children}
-        </div>
+        <div className="text-muted-foreground *:my-2 [&>*:last-child]:mb-0">{children}</div>
       </blockquote>
     </div>
   ),
@@ -72,11 +64,7 @@ export const components = {
     const id = getAnchor(children);
 
     return (
-      <h1
-        id={id}
-        className="mt-8 mb-4 scroll-mt-20 text-4xl font-bold text-foreground"
-        {...rest}
-      >
+      <h1 id={id} className="mt-8 mb-4 scroll-mt-20 text-4xl font-bold text-foreground" {...rest}>
         {children}
       </h1>
     );
@@ -86,11 +74,7 @@ export const components = {
     const id = getAnchor(children);
 
     return (
-      <h2
-        id={id}
-        className="mt-8 mb-4 scroll-mt-20 text-3xl font-bold text-foreground"
-        {...rest}
-      >
+      <h2 id={id} className="mt-8 mb-4 scroll-mt-20 text-3xl font-bold text-foreground" {...rest}>
         {children}
       </h2>
     );
@@ -155,12 +139,7 @@ export const components = {
   hr: () => <Separator />,
 
   img: ({ src, alt, ...rest }: any) => (
-    <Image
-      src={src}
-      alt={alt}
-      className="my-6 rounded-lg border border-border"
-      {...rest}
-    />
+    <Image src={src} alt={alt} className="my-6 rounded-lg border border-border" {...rest} />
   ),
 
   kbd: ({ children }: any) => <Kbd>{children}</Kbd>,
@@ -193,10 +172,7 @@ export const components = {
   ),
 
   td: ({ children, ...rest }: any) => (
-    <td
-      className="p-4 align-middle text-foreground [&:has([role=checkbox])]:pr-0"
-      {...rest}
-    >
+    <td className="p-4 align-middle text-foreground [&:has([role=checkbox])]:pr-0" {...rest}>
       {children}
     </td>
   ),
@@ -217,10 +193,7 @@ export const components = {
   ),
 
   tr: ({ children, ...rest }: any) => (
-    <tr
-      className="border-b border-border transition-colors hover:bg-muted/50"
-      {...rest}
-    >
+    <tr className="border-b border-border transition-colors hover:bg-muted/50" {...rest}>
       {children}
     </tr>
   ),

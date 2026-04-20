@@ -16,12 +16,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <body className="m-auto max-w-2xl">
       <Analytics />
       <SpeedInsights />
-      <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        enableSystem
-        disableTransitionOnChange
-      >
+      <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
         <main className="min-h-screen p-6 pt-3 md:pt-6">
           {children}
           <Footer />

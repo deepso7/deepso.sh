@@ -9,9 +9,7 @@ export default function HomePage() {
       <h1 className="text-2xl font-bold">Deepso.</h1>
 
       <div className="flex flex-col space-y-4">
-        <p className="text-sm font-light italic">
-          Exploring new things at a constant pace.
-        </p>
+        <p className="text-sm font-light italic">Exploring new things at a constant pace.</p>
       </div>
 
       <div className="flex flex-col space-y-4">
