@@ -5,6 +5,10 @@
       "source": "/resume",
       "destination": "https://rxresu.me/deeepso/main",
       "permanent": false
+    },
+    {
+      "source": "/token26",
+      "destination": "https://drive.google.com/file/d/1RGpiEFWXcIPY2x31Sb36o7lnuqY-fDaW/view?usp=sharing"
     }
   ]
 }
