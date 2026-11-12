@@ -185,6 +185,8 @@ export const withLiveGithub = async <T extends Pick<PortfolioData, "featured" | 
         Accept: "application/vnd.github+json",
         ...(token ? { Authorization: `Bearer ${token}` } : {}),
       },
+      // Covers the body read too; on timeout the catch falls back to the snapshot.
+      signal: AbortSignal.timeout(5000),
     });
     if (!res.ok) {
       return data;

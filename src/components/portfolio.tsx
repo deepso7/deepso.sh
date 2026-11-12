@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
 const row = cn(
   "group/row relative -mx-2 flex items-baseline gap-4 rounded-md px-2 py-1.5 transition duration-150 ease-out",
   "hover:bg-slate-900/5 dark:hover:bg-white/5",
-  "hover:opacity-100! pointer-fine:group-hover/list:opacity-40",
+  "hover:opacity-100! focus-visible:opacity-100! pointer-fine:group-hover/list:opacity-40",
   "outline-none focus-visible:outline-2 focus-visible:outline-sky-500",
 );
 
