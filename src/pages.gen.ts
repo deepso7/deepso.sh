@@ -15,7 +15,8 @@ type Page =
 
 // prettier-ignore
 type Layout =
-| { path: '/' };
+| { path: '/' }
+| { path: '/writing' };
 
 // prettier-ignore
 declare module 'waku/router' {

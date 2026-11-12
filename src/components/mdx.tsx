@@ -3,149 +3,118 @@ import { Image } from "@unpic/react";
 import { Link } from "waku";
 
 import { getAnchor } from "@/lib/get-anchor";
+import { link } from "@/lib/styles";
+import { cn } from "@/lib/utils";
 
 import { Code } from "./code";
 import { Kbd } from "./ui/kbd";
-import { Separator } from "./ui/separator";
+
+const heading = "scroll-mt-20 font-normal tracking-tight text-slate-900 dark:text-slate-50";
 
 export const components = {
   a: ({ href, children, ...rest }: any) => {
-    const classNames =
-      "text-primary hover:text-primary/80 underline underline-offset-4 transition-colors";
-
     if (href.startsWith("/")) {
       return (
-        <Link to={href} className={classNames} {...rest}>
+        <Link to={href} className={cn(link, "font-normal")} {...rest}>
           {children}
         </Link>
       );
     }
 
     return (
-      <a href={href} className={classNames} target="_blank" rel="noreferrer" {...rest}>
+      <a
+        href={href}
+        className={cn(link, "font-normal")}
+        target="_blank"
+        rel="noopener noreferrer"
+        {...rest}
+      >
         {children}
       </a>
     );
   },
 
   blockquote: ({ children, ...rest }: any) => (
-    <div className="my-4">
-      <blockquote
-        className="rounded-r-lg border-l-4 border-primary bg-muted/50 px-6 py-4"
-        {...rest}
-      >
-        <div className="mb-2 flex items-center gap-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 128 128"
-            width="64px"
-            height="64px"
-            className="size-4 fill-current text-primary"
-          >
-            <path d="M 64 6 C 32 6 6 32 6 64 C 6 96 32 122 64 122 C 96 122 122 96 122 64 C 122 32 96 6 64 6 z M 64 12 C 92.7 12 116 35.3 116 64 C 116 92.7 92.7 116 64 116 C 35.3 116 12 92.7 12 64 C 12 35.3 35.3 12 64 12 z M 64 30 A 9 9 0 0 0 64 48 A 9 9 0 0 0 64 30 z M 64 59 C 59 59 55 63 55 68 L 55 92 C 55 97 59 101 64 101 C 69 101 73 97 73 92 L 73 68 C 73 63 69 59 64 59 z" />
-          </svg>
-          <div className="font-semibold text-foreground">Note</div>
-        </div>
-        <div className="text-muted-foreground *:my-2 [&>*:last-child]:mb-0">{children}</div>
-      </blockquote>
-    </div>
+    <blockquote
+      className="not-prose my-8 rounded-r-lg border-l-2 border-orange-300 bg-orange-50/70 px-5 py-4 dark:border-orange-400/60 dark:bg-orange-950/20"
+      {...rest}
+    >
+      <p className="font-mono text-xs tracking-wide text-orange-700 lowercase dark:text-orange-300">
+        note
+      </p>
+      <div className="mt-2 leading-7 text-slate-700 *:my-2 *:last:mb-0 dark:text-slate-300">
+        {children}
+      </div>
+    </blockquote>
   ),
 
   code: ({ children, ...rest }: any) => (
     <code
-      className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-medium text-foreground"
+      className="rounded-sm bg-slate-900/5 px-1 py-0.5 font-mono text-sm font-normal text-slate-800 before:content-none after:content-none dark:bg-white/10 dark:text-slate-200"
       {...rest}
     >
       {children}
     </code>
   ),
 
-  h1: ({ children, ...rest }: any) => {
-    const id = getAnchor(children);
+  h1: ({ children, ...rest }: any) => (
+    <h1 id={getAnchor(children)} className={cn(heading, "mt-12 mb-4 text-3xl")} {...rest}>
+      {children}
+    </h1>
+  ),
 
-    return (
-      <h1 id={id} className="mt-8 mb-4 scroll-mt-20 text-4xl font-bold text-foreground" {...rest}>
-        {children}
-      </h1>
-    );
-  },
+  h2: ({ children, ...rest }: any) => (
+    <h2 id={getAnchor(children)} className={cn(heading, "mt-12 mb-4 text-2xl")} {...rest}>
+      {children}
+    </h2>
+  ),
 
-  h2: ({ children, ...rest }: any) => {
-    const id = getAnchor(children);
+  h3: ({ children, ...rest }: any) => (
+    <h3 id={getAnchor(children)} className={cn(heading, "mt-10 mb-3 text-xl")} {...rest}>
+      {children}
+    </h3>
+  ),
 
-    return (
-      <h2 id={id} className="mt-8 mb-4 scroll-mt-20 text-3xl font-bold text-foreground" {...rest}>
-        {children}
-      </h2>
-    );
-  },
+  h4: ({ children, ...rest }: any) => (
+    <h4 id={getAnchor(children)} className={cn(heading, "mt-8 mb-2 text-lg")} {...rest}>
+      {children}
+    </h4>
+  ),
 
-  h3: ({ children, ...rest }: any) => {
-    const id = getAnchor(children);
+  h5: ({ children, ...rest }: any) => (
+    <h5 id={getAnchor(children)} className={cn(heading, "mt-8 mb-2 text-base")} {...rest}>
+      {children}
+    </h5>
+  ),
 
-    return (
-      <h3
-        id={id}
-        className="mt-6 mb-3 scroll-mt-20 text-2xl font-semibold text-foreground"
-        {...rest}
-      >
-        {children}
-      </h3>
-    );
-  },
+  h6: ({ children, ...rest }: any) => (
+    <h6
+      id={getAnchor(children)}
+      className={cn(heading, "mt-8 mb-2 font-mono text-sm text-slate-600 lowercase")}
+      {...rest}
+    >
+      {children}
+    </h6>
+  ),
 
-  h4: ({ children, ...rest }: any) => {
-    const id = getAnchor(children);
-
-    return (
-      <h4
-        id={id}
-        className="mt-4 mb-2 scroll-mt-20 text-xl font-semibold text-foreground"
-        {...rest}
-      >
-        {children}
-      </h4>
-    );
-  },
-
-  h5: ({ children, ...rest }: any) => {
-    const id = getAnchor(children);
-
-    return (
-      <h5
-        id={id}
-        className="mt-4 mb-2 scroll-mt-20 text-lg font-semibold text-foreground"
-        {...rest}
-      >
-        {children}
-      </h5>
-    );
-  },
-
-  h6: ({ children, ...rest }: any) => {
-    const id = getAnchor(children);
-
-    return (
-      <h6
-        id={id}
-        className="mt-4 mb-2 scroll-mt-20 text-base font-semibold text-foreground"
-        {...rest}
-      >
-        {children}
-      </h6>
-    );
-  },
-
-  hr: () => <Separator />,
+  hr: () => <hr className="my-12 border-slate-900/10 dark:border-white/10" />,
 
   img: ({ src, alt, ...rest }: any) => (
-    <Image src={src} alt={alt} className="my-6 rounded-lg border border-border" {...rest} />
+    <Image
+      src={src}
+      alt={alt}
+      className="my-8 rounded-lg border border-slate-900/10 dark:border-white/10"
+      {...rest}
+    />
   ),
 
   kbd: ({ children }: any) => <Kbd>{children}</Kbd>,
 
   mark: ({ children, ...rest }: any) => (
-    <mark className="rounded bg-accent px-1 text-accent-foreground" {...rest}>
+    <mark
+      className="rounded-sm bg-orange-100 px-1 text-slate-900 dark:bg-orange-400/20 dark:text-orange-100"
+      {...rest}
+    >
       {children}
     </mark>
   ),
@@ -158,28 +127,28 @@ export const components = {
   },
 
   table: ({ children, ...rest }: any) => (
-    <div className="my-6 w-full overflow-y-auto">
-      <table className="w-full border-collapse" {...rest}>
+    <div className="not-prose my-8 w-full overflow-x-auto">
+      <table className="w-full border-collapse text-sm" {...rest}>
         {children}
       </table>
     </div>
   ),
 
   tbody: ({ children, ...rest }: any) => (
-    <tbody className="[&>tr:last-child]:border-0" {...rest}>
+    <tbody className="*:last:border-0" {...rest}>
       {children}
     </tbody>
   ),
 
   td: ({ children, ...rest }: any) => (
-    <td className="p-4 align-middle text-foreground [&:has([role=checkbox])]:pr-0" {...rest}>
+    <td className="px-3 py-2.5 align-top text-slate-700 dark:text-slate-300" {...rest}>
       {children}
     </td>
   ),
 
   th: ({ children, ...rest }: any) => (
     <th
-      className="h-12 px-4 text-left align-middle font-semibold text-foreground [&:has([role=checkbox])]:pr-0"
+      className="px-3 py-2.5 text-left align-bottom font-mono text-xs font-normal tracking-wide text-slate-600 lowercase dark:text-slate-400"
       {...rest}
     >
       {children}
@@ -187,13 +156,13 @@ export const components = {
   ),
 
   thead: ({ children, ...rest }: any) => (
-    <thead className="border-b border-border" {...rest}>
+    <thead className="border-b border-slate-900/10 dark:border-white/10" {...rest}>
       {children}
     </thead>
   ),
 
   tr: ({ children, ...rest }: any) => (
-    <tr className="border-b border-border transition-colors hover:bg-muted/50" {...rest}>
+    <tr className="border-b border-slate-900/5 dark:border-white/5" {...rest}>
       {children}
     </tr>
   ),
