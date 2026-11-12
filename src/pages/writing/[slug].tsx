@@ -5,66 +5,63 @@ import type { PageProps } from "waku/router";
 
 import { Head } from "@/components/head";
 import { components } from "@/components/mdx";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import { HomeIcon } from "@/components/ui/home";
+import { toIsoDate } from "@/lib/portfolio";
+import { link, meta, muted, stagger } from "@/lib/styles";
+import { cn } from "@/lib/utils";
 
-export default function WritingPage({ slug }: PageProps<"/writing/[slug]">) {
+const longDate = new Intl.DateTimeFormat("en", {
+  day: "numeric",
+  month: "long",
+  timeZone: "UTC",
+  year: "numeric",
+});
+
+const WritingPage = ({ slug }: PageProps<"/writing/[slug]">) => {
   const writing = allWritings.find((data) => data.slug === slug);
 
   if (!writing) {
-    return <div>Not Found</div>;
+    return (
+      <p className={muted}>
+        Nothing here.{" "}
+        <Link to="/" className={link}>
+          Back home
+        </Link>
+      </p>
+    );
   }
+
+  const date = writing.date ? toIsoDate(writing.date) : undefined;
 
   return (
     <>
       <Head title={writing.title} description={writing.description} />
-      <Breadcrumb className="py-4">
-        <BreadcrumbList>
-          <BreadcrumbItem>
-            <BreadcrumbLink
-              render={
-                <Link to="/">
-                  <HomeIcon size={16} />
-                </Link>
-              }
-            />
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbPage>{writing.title}</BreadcrumbPage>
-          </BreadcrumbItem>
-        </BreadcrumbList>
-      </Breadcrumb>
-      <article className="w-full max-w-none">
-        <header className="mb-8">
-          <h1 className="mb-2 text-4xl font-bold text-foreground">{writing.title}</h1>
-          {writing.description && (
-            <p className="text-lg text-muted-foreground">{writing.description}</p>
-          )}
-          {writing.date && (
-            <time className="text-sm text-muted-foreground">
-              {new Date(writing.date).toLocaleDateString("en-US", {
-                day: "numeric",
-                month: "long",
-                year: "numeric",
-              })}
+      <article>
+        <header className={stagger(1)}>
+          {date && (
+            <time dateTime={date} className={meta}>
+              {longDate.format(new Date(`${date}T00:00:00Z`))}
             </time>
           )}
+          <h1 className="mt-3 text-3xl font-normal tracking-tight text-balance">{writing.title}</h1>
+          {writing.description && (
+            <p className={cn("mt-3 text-lg text-pretty", muted)}>{writing.description}</p>
+          )}
         </header>
-        <div className="prose prose-lg max-w-none dark:prose-invert">
+        <div
+          className={cn(
+            "prose mt-12 max-w-none prose-slate dark:prose-invert",
+            "prose-p:leading-7 prose-p:text-pretty prose-li:leading-7",
+            stagger(2),
+          )}
+        >
           <MDXContent code={writing.mdx} components={components} />
         </div>
       </article>
     </>
   );
-}
+};
+
+export default WritingPage;
 
 export const getConfig = () => {
   const paths = allWritings.map((data) => data.slug);
