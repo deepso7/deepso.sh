@@ -67,7 +67,7 @@ export const portfolio: Omit<PortfolioData, "writing"> = {
       pushedAt: "2026-11-11T00:00:00Z",
       repo: "https://github.com/deepso7/minip2p",
       slug: "minip2p",
-      tagline: "A small sans-I/O libp2p to learn the stack",
+      tagline: "A small sans-I/O libp2p implementation",
       url: "https://minip2p.com",
     },
     {
