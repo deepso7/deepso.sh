@@ -6,7 +6,7 @@ interface Props {
 
 const defaultProps: Props = {
   description:
-    "Software engineer working on Aspen at Lucidly Labs. Previously WebRTC and distributed systems at Huddle01.",
+    "Developer and tinkerer. Building Aspen at Lucidly Labs, previously WebRTC infra at Huddle01.",
   ogImage: "https://deepso.sh/images/cover.jpg",
   title: "Deepso",
 };
