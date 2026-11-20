@@ -204,7 +204,7 @@ export const Portfolio = ({ data }: { data: PortfolioData }) => {
           </ul>
         </Section>
 
-        <Section title="also" i={5}>
+        <Section title="other" i={5}>
           <ul className="group/list text-sm">
             {data.other.map((p) => (
               <ProjectRow key={p.slug} p={p} pushed={pushed(p.pushedAt)} />
@@ -258,7 +258,7 @@ export const Portfolio = ({ data }: { data: PortfolioData }) => {
           </ul>
         </Section>
 
-        <Section title="elsewhere" i={8}>
+        <Section title="links" i={8}>
           <p className="flex flex-wrap gap-x-5 gap-y-1">
             {data.links.map((l) => (
               <External key={l.href} href={l.href}>

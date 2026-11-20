@@ -45,12 +45,12 @@ export interface PortfolioData {
 }
 
 export const portfolio: Omit<PortfolioData, "writing"> = {
-  bio: "Engineer at Lucidly Labs, building Aspen. Before that, founding & lead engineer at Huddle01, where I scaled WebRTC infrastructure for millions of minutes of calls. On the side I build peer-to-peer systems.",
+  bio: "I'm Deepanshu. Right now I'm at Lucidly Labs working on Aspen. Before this I spent 4.5 years at Huddle01 as founding and lead engineer, building WebRTC infrastructure, SDKs, and web apps.",
   experience: [
     {
       href: "https://tryaspen.ai",
       org: "Lucidly Labs",
-      role: "Engineer, building Aspen",
+      role: "Engineer",
       years: "now",
     },
     {
@@ -67,7 +67,7 @@ export const portfolio: Omit<PortfolioData, "writing"> = {
       pushedAt: "2026-11-11T00:00:00Z",
       repo: "https://github.com/deepso7/minip2p",
       slug: "minip2p",
-      tagline: "libp2p, small enough to read in an afternoon",
+      tagline: "Minimal, sans-I/O libp2p implementation",
       url: "https://minip2p.com",
     },
     {
@@ -76,7 +76,7 @@ export const portfolio: Omit<PortfolioData, "writing"> = {
       pushedAt: "2026-11-11T00:00:00Z",
       repo: "https://github.com/deepso7/qop",
       slug: "qop",
-      tagline: "Peer-to-peer messaging with on-chain identity",
+      tagline: "P2P messaging app with on-chain identity",
       url: "https://qop.sh",
     },
     {
@@ -85,7 +85,7 @@ export const portfolio: Omit<PortfolioData, "writing"> = {
       pushedAt: "2026-11-08T00:00:00Z",
       repo: "https://github.com/deepso7/minipaw",
       slug: "minipaw",
-      tagline: "netcat that punches through NATs",
+      tagline: "Encrypted p2p netcat over NATs",
       url: "https://paw.minip2p.com",
     },
     {
@@ -94,7 +94,7 @@ export const portfolio: Omit<PortfolioData, "writing"> = {
       pushedAt: "2026-11-11T00:00:00Z",
       repo: "https://github.com/deepso7/oto",
       slug: "oto",
-      tagline: "A noise-cancelling mic, in Rust",
+      tagline: "Realtime noise-cancelling virtual mic",
     },
   ],
   handle: "deepso7",
@@ -105,7 +105,7 @@ export const portfolio: Omit<PortfolioData, "writing"> = {
   ],
   location: "India",
   name: "Deepso",
-  now: "Building Aspen at Lucidly Labs. Evenings: making libp2p small.",
+  now: "Mostly working on Aspen, minip2p, and qop.",
   other: [
     {
       language: "TypeScript",
@@ -113,7 +113,7 @@ export const portfolio: Omit<PortfolioData, "writing"> = {
       pushedAt: "2026-10-04T00:00:00Z",
       repo: "https://github.com/deepso7/kanshi",
       slug: "kanshi",
-      tagline: "Uptime monitoring in one Worker",
+      tagline: "Self-hosted uptime monitor on Cloudflare Workers",
     },
     {
       language: "TypeScript",
@@ -121,7 +121,7 @@ export const portfolio: Omit<PortfolioData, "writing"> = {
       pushedAt: "2026-10-05T00:00:00Z",
       repo: "https://github.com/deepso7/trashlytics",
       slug: "trashlytics",
-      tagline: "Analytics events that can't be wrong",
+      tagline: "Type-safe event tracking with runtime validation",
     },
     {
       language: "TypeScript",
@@ -129,7 +129,7 @@ export const portfolio: Omit<PortfolioData, "writing"> = {
       pushedAt: "2026-08-24T00:00:00Z",
       repo: "https://github.com/deepso7/portup",
       slug: "portup",
-      tagline: "A tiny daemon for local services",
+      tagline: "Daemon and CLI for managing local services",
     },
     {
       language: "Rust",
@@ -137,7 +137,7 @@ export const portfolio: Omit<PortfolioData, "writing"> = {
       pushedAt: "2026-01-20T00:00:00Z",
       repo: "https://github.com/deepso7/pingo",
       slug: "pingo",
-      tagline: "RTT between NAT'd peers",
+      tagline: "P2P latency measurement over STUN and UDP",
     },
     {
       language: "Rust",
@@ -145,21 +145,21 @@ export const portfolio: Omit<PortfolioData, "writing"> = {
       pushedAt: "2026-01-19T00:00:00Z",
       repo: "https://github.com/deepso7/orange-bft",
       slug: "orange-bft",
-      tagline: "Simplex consensus, from scratch",
+      tagline: "Naive implementation of Simplex consensus",
     },
   ],
-  role: "Engineer — WebRTC & distributed systems",
+  role: "Software engineer",
   work: {
     appUrl: "https://app.tryaspen.ai",
     highlights: [
-      "Signal feed with per-source track records",
-      "Execution on Hyperliquid, isolated from the feed",
-      "Public MCP server at api.tryaspen.ai/mcp",
+      "Tracks signal history and performance per source",
+      "Executes trades on Hyperliquid separately from the signal feed",
+      "Exposes a public MCP server at api.tryaspen.ai/mcp",
     ],
     org: "Lucidly Labs",
     product: "Aspen",
     role: "Engineer",
-    tagline: "Trading signals from the people you already follow",
+    tagline: "Trading signal feed and execution app",
     url: "https://tryaspen.ai",
   },
 };

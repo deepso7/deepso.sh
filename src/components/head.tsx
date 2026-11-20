@@ -5,7 +5,8 @@ interface Props {
 }
 
 const defaultProps: Props = {
-  description: "Developer and Tinkerer",
+  description:
+    "Software engineer working on Aspen at Lucidly Labs. Previously WebRTC and distributed systems at Huddle01.",
   ogImage: "https://deepso.sh/images/cover.jpg",
   title: "Deepso",
 };
@@ -25,7 +26,7 @@ export const Head = (props: Props) => (
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={props.title ?? defaultProps.title} />
-    <meta name="twitter:description" content={props.description} />
+    <meta name="twitter:description" content={props.description ?? defaultProps.description} />
     <meta name="twitter:image" content={props.ogImage ?? defaultProps.ogImage} />
     <meta name="twitter:image:width" content="1280" />
     <meta name="twitter:image:height" content="720" />

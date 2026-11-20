@@ -46,9 +46,9 @@ Voila 🚀, we now have Pi-hole running. One last thing to do is route our DNS r
 
 ### Route DNS requests to Pi-hole
 
-Go to the admin page of your router—mine is at [192.168.0.1](http://192.168.0.1/)—and find something that says DHCP Server or the place where we assigned a static IP for the Pi. ![DHCP server](/images/writing/pihole/dhcp-server.png)
+Go to the admin page of your router (mine is at [192.168.0.1](http://192.168.0.1/)) and find something that says DHCP Server or the place where we assigned a static IP for the Pi. ![DHCP server](/images/writing/pihole/dhcp-server.png)
 
-Add your Pi-hole static IP to the primary DNS for our LAN, and a secondary DNS for fallback. I've added [1.1.1.1](1.1.1.1)
+Add your Pi-hole static IP to the primary DNS for our LAN, and a secondary DNS for fallback. I've added `1.1.1.1`.
 
 Done! Now all DNS requests on our local network will go through Pi-hole.
 

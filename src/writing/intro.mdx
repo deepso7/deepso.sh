@@ -1,44 +1,44 @@
 ---
 slug: intro
 title: Hey, I'm Deepanshu
-description: Building real-time communication infrastructure and tinkering with distributed systems
+description: Real-time infrastructure, distributed systems, and what I worked on at Huddle01
 date: 2026/1/22
 ---
 
-Hi, I'm Deepanshu—a full-stack engineer passionate about WebRTC, real-time communication, and distributed systems.
+Hi, I'm Deepanshu. I'm a full-stack engineer working mostly on WebRTC, real-time communication, and distributed systems.
 
-For the past 4.5 years, I worked at [Huddle01](https://huddle01.com) as the Founding and Lead Engineer. I led a development team of 10-12 engineers. During my time at Huddle01, we built:
+I spent 4.5 years at [Huddle01](https://huddle01.com) as the Founding and Lead Engineer, leading a team of 10-12 engineers. Some of the things we built there:
 
-- **Scaled WebRTC & WebSocket Infrastructure**
+- **WebRTC & WebSocket infrastructure**
 
-  Architected and implemented "Cascading," a horizontally partitioned WebRTC SFU topology inspired by database sharding. This enabled us to reliably support 10,000+ concurrent users per room with sub-100ms latency, significantly improving global latency and bandwidth efficiency.
-  Migrated from JSON to Protobufs, reducing message size by 60% and more than doubling throughput per WebSocket instance (we use [uWebSockets](https://github.com/uNetworking/uWebSockets.js))
+  Built "Cascading", a horizontally partitioned WebRTC SFU setup (similar to database sharding) that let us handle 10,000+ concurrent users per room with sub-100ms latency.
+  Moved signaling from JSON to Protobufs, cutting message sizes by ~60% and more than doubling throughput per WebSocket instance (running on [uWebSockets](https://github.com/uNetworking/uWebSockets.js)).
 
 - **NFT indexing service**
 
-  Built an NFT indexer because [phantom](https://phantom.com) acquired [simplehash](https://simplehash.com) and shut it down. Used Rust to leverage memory safe multithreading and indexed and cached a few terabytes of NFTs in S3 bucket.
+  Built an NFT indexer because [Phantom](https://phantom.com) acquired [SimpleHash](https://simplehash.com) and shut it down. Wrote it in Rust for multithreaded indexing and cached a few terabytes of NFTs in S3.
 
-- **Designed and developed various SDKs**
+- **SDKs**
 
-  Architected frontend and backend SDKs for interacting with our real-time communication service with a nice easy to use DX and flexibility to mould it into any requirements.
+  Built frontend and backend SDKs for our real-time infra, aiming for simple DX while keeping them flexible enough for custom setups.
 
-- **Architected recording service**
+- **Recording service**
 
-  Developed a recording service using ffmpeg, puppeteer, xvfb, pulse audio, node.js and typescript, and deployed using kubernetes, which helped in auto-scaling pods whenever there was high load.
+  Built a recording service using FFmpeg, Puppeteer, Xvfb, PulseAudio, Node.js, and TypeScript, deployed on Kubernetes so pods could autoscale under high load.
 
-- **Managed deployment pipeline**
+- **Deployment pipeline**
 
-  Deployed services to bare metal servers to save costs and set up CI/CD pipeline to deploy on bare metal. Earlier used AWS to deploy service to lambda and fargate.
+  Moved services off AWS (Lambda and Fargate) onto bare-metal servers to save costs, and set up the CI/CD pipeline for bare-metal deploys.
 
-- **Migrated from Monolith to Modular Architecture**
+- **Monolith to microservices**
 
-  Led the transition from a tightly coupled monolithic system to a modular, event-driven architecture using gRPC. This allowed independent scaling, zero-downtime deployments, and clearer ownership, boosting developer productivity and operational stability as our engineering team grew.
+  Broke up our monolith into smaller event-driven services talking over gRPC, which made it easier to scale independently, ship without downtime, and split ownership as the team grew.
 
-- **Led the team to build various client facing products**
+- **Client-facing products**
 
-  Huddle01 meeting app, dashboards for managing meetings, chrome extension, gcal adons, node sales platform, [farhouse](https://house01.fun).
+  Led the team building the Huddle01 meeting app, dashboards for managing meetings, Chrome extension, Google Calendar add-ons, node sales platform, and [farhouse](https://house01.fun).
 
-## **Side Projects**
+## Side Projects
 
 - **Pingo** - [https://github.com/deepso7/pingo](https://github.com/deepso7/pingo)
 
