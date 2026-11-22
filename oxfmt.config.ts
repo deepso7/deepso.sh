@@ -3,7 +3,7 @@ import ultracite from "ultracite/oxfmt";
 
 export default defineConfig({
   extends: [ultracite],
-  ignorePatterns: ["**/ui/**"],
+  ignorePatterns: [".agents/**"],
   sortTailwindcss: {
     attributes: ["class", "className"],
     functions: ["clsx", "cn"],
